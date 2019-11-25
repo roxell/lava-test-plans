@@ -26,7 +26,7 @@
         SKIP_INSTALL: 'true'
         TST_CMDFILES: '{{testname}}'
         SKIPFILE: skipfile-lkft.yaml
-        BOARD: '{{ DEVICE_TYPE }}'
+        BOARD: '{{ BOARD_TYPE }}'
         BRANCH: '{{ KERNEL_VERSION_OVERRIDE|default(KERNEL_VERSION) }}'
         ENVIRONMENT: '{{ ENVIRONMENT|default('production') }}'
         TIMEOUT_MULTIPLIER: 3

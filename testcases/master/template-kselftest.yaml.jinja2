@@ -47,7 +47,7 @@
       parameters:
         KSELFTEST_PATH: {{KSELFTEST_PATH}}
         SKIPFILE: skipfile-lkft.yaml
-        BOARD: '{{ DEVICE_TYPE }}'
+        BOARD: '{{ BOARD_TYPE }}'
         BRANCH: '{{ KERNEL_VERSION_OVERRIDE|default(KERNEL_VERSION) }}'
         ENVIRONMENT: '{{ ENVIRONMENT|default("production") }}'
 {% endblock test_target %}

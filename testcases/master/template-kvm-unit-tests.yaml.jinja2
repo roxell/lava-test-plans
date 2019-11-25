@@ -23,5 +23,5 @@
       name: kvm-unit-tests
       parameters:
         SKIP_INSTALL: 'true'
-        SMP: {% if DEVICE_TYPE == "juno-r2" %}'false'{% else %}'true'{% endif %}
+        SMP: {% if BOARD_TYPE == "juno-r2" %}'false'{% else %}'true'{% endif %}
 {% endblock test_target %}
