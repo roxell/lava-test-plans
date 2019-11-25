@@ -1,4 +1,4 @@
-{% extends "lkft-fastboot.jinja2" %}
+{% extends "fastboot.jinja2" %}
 
 {% set rootfs = true %}
 {% set rootfs_label = 'system' %}
@@ -7,7 +7,6 @@
 {% set BOOT_OS_PROMPT = "hikey:~" %}
 {% block device_type %}hi6220-hikey-r2{% endblock %}
 {% set auto_login_prompt = "login:" %}
-{% set auto_login_username = "linaro" %}
 {% set boot_method = "grub" %}
 {% set DEPLOY_OS = "oe" %}
 

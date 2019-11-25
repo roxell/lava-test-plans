@@ -330,6 +330,8 @@ def main():
         """ Prepare lava jobs """
         lava_job = None
         try:
+            #print(context)
+            print(test)
             lava_job = j2_env.get_template(test).render(context)
             lava_job = parse_template(lava_job)
             lava_jobs.append(lava_job)

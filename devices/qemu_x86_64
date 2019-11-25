@@ -1,4 +1,4 @@
-{% extends "lkft-fastboot.jinja2" %}
+{% extends "fastboot.jinja2" %}
 
 {% set rootfs_label = "rootfs" %}
 {% set deploy_target = "tmpfs" %}

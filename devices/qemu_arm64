@@ -1,4 +1,4 @@
-{% extends "lkft-fastboot.jinja2" %}
+{% extends "fastboot.jinja2" %}
 
 {% set apply_overlay = "rootfs" %}
 {% set boot_label = "kernel" %}
