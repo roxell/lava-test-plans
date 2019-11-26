@@ -9,6 +9,7 @@
 
 {# auto_login_* #}
 {% if auto_login_prompt is undefined %}{% set auto_login_prompt = "login:" %}{% endif %}
+{% if auto_login_username is undefined %}{% set auto_login_username = "root" %}{% endif %}
 
 {% block global_settings %}
 timeouts:
