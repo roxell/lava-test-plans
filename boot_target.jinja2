@@ -1,0 +1,36 @@
+- boot:
+    namespace: target
+{% if auto_login == true %}
+    auto_login:
+      login_prompt: "{{ AUTO_LOGIN_PROMPT }}"
+      username: "{{ AUTO_LOGIN_USERNAME }}"
+{% block auto_login_commands %}
+{% if AUTO_LOGIN_USERNAME != 'root' %}
+      login_commands:
+        # Become super user to run tests
+        - su
+{% endif %}
+{% if AUTO_LOGIN_PASSWORD_PROMPT is defined %}
+      password_prompt: "{{ AUTO_LOGIN_PASSWORD_PROMPT }}"
+{% endif %}
+{% if AUTO_LOGIN_PASSWORD is defined %}
+      password: "{{ AUTO_LOGIN_PASSWORD }}"
+{% endif %}
+{% endblock auto_login_commands %}
+{% endif %}
+    prompts:
+{% if BOOT_OS_PROMPT is defined %}
+{% if BOOT_OS_PROMPT is not string and BOOT_OS_PROMPT is sequence %}
+{% for boot_prompt in BOOT_OS_PROMPT %}
+    - "{{boot_prompt}}"
+{% endfor %}
+{% else %}
+    - "{{BOOT_OS_PROMPT}}"
+{% endif %}
+{% endif %}
+    - 'root@(.*):[/~]#'
+    timeout:
+      minutes: {{ target_boot_timeout }}
+    method: {{ boot_method }}
+{% block boot_commands %}
+{% endblock boot_commands %}

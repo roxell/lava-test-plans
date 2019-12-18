@@ -11,12 +11,6 @@
 {% set boot_method = "grub" %}
 {% set DEPLOY_OS = "oe" %}
 
-{% block auto_login_commands %}
-      login_commands:
-        # Become super user to run tests
-        - su
-{% endblock auto_login_commands %}
-
 {% block boot_commands %}
     commands: installed
 {% endblock boot_commands %}
