@@ -11,6 +11,7 @@
 {% set target_boot_timeout = target_deploy_timeout|default(10) %}
 {% set auto_login = auto_login|default(true) %}
 {% set AUTO_LOGIN_USERNAME = AUTO_LOGIN_USERNAME|default("root") %}
+{% set ROOTFS_URL_COMP = ROOTFS_URL_COMP|default("gz") %}
 
 {% block global_settings %}
 {{ super() }}
