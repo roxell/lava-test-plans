@@ -3,6 +3,7 @@
 {% set lxc_deploy_timeout = 0 %}
 {% set lxc_boot_timeout = 0 %}
 {% set lxc_install_fastboot_timeout = 0 %}
+{% set ROOTFS_URL_COMP = ROOTFS_URL_COMP|default("xz") %}
 
 {% block actions %}
 
