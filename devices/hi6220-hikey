@@ -25,11 +25,6 @@
     commands: installed
 {% endblock boot_commands %}
 
-{% block deploy_target %}
-{{ super() }}
-{% include "include/pre-power-command.jinja2" %}
-{% endblock deploy_target %}
-
 {% block test_target %}
   {{ super() }}
     - from: inline

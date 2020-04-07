@@ -13,7 +13,6 @@
 {% set rootfs_label = rootfs_label|default("rootfs") %}
 {% set apply_overlay = apply_overlay|default("rootfs") %}
 {% set DEPLOY_TARGET = DEPLOY_TARGET|default("fastboot") %}
-{% set pre_power_command = pre_power_command|default(true) %}
 {% set pre_os_command = pre_os_command|default(true) %}
 {% set auto_login = auto_login|default(true) %}
 {% set boot_method = boot_method|default("fastboot") %}

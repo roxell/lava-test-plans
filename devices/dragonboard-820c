@@ -17,8 +17,3 @@
         - su
 {% endif %}
 {% endblock auto_login_commands %}
-
-{% block deploy_target %}
-{{ super() }}
-{% include "include/pre-power-command.jinja2" %}
-{% endblock deploy_target %}
