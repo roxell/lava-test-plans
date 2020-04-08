@@ -13,9 +13,9 @@
 {% block deploy_target %}
 {{ super() }}
 {% if DEPLOY_TARGET == "downloads" %}
-      steps:
-      - git clone -b 20200325 https://github.com/linaro/kir.git
-      - ./kir/lava/board_setup.sh {{DEVICE_TYPE}}
+        steps:
+        - git clone -b 20200325 https://github.com/linaro/kir.git
+        - ./kir/lava/board_setup.sh {{DEVICE_TYPE}}
 
 - deploy:
     timeout:
