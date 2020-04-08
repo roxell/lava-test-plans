@@ -28,7 +28,6 @@
     timeout:
       minutes: {{ target_deploy_timeout }}
     to: {{ DEPLOY_TARGET }}
-    namespace: target
     images:
 {% if ptable == true %}
       {{ PTABLE_LABEL }}:
@@ -113,7 +112,8 @@
 
 {% block boot_target %}
 - boot:
-    namespace: target
+    method: grub
+    commands: installed
 {% if auto_login == true %}
 {% include "include/boot_target/auto_login.jinja2" %}
 {% block auto_login_commands %}
