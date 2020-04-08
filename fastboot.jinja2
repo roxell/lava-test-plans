@@ -112,6 +112,10 @@
         image: {{DOCKER_IMAGE}}
 {% endblock deploy_target %}
 
+{% block pre_os_command %}
+{% include "include/boot_target/boot_commands.jinja2" %}
+{% endblock pre_os_command %}
+
 {% block boot_target %}
 - boot:
     docker:
@@ -125,9 +129,6 @@
 {% endif %}
 {% include "include/boot_target/boot_os_prompt.jinja2" %}
 {% include "include/boot_target/timeout_and_method.jinja2" %}
-{% block boot_commands %}
-{% endblock boot_commands %}
-{% include "include/boot_target/boot_commands.jinja2" %}
 {% endblock boot_target %}
 
 {% block test_target %}
