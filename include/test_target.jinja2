@@ -1,5 +1,5 @@
 - test:
-{% if DEPLOY_TARGET != "downloads" %}
+{% if DEPLOY_TARGET is undefined or DEPLOY_TARGET != "downloads" %}
     namespace: target
 {% endif %}
     timeout:
