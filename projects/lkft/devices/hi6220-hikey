@@ -1,3 +1,5 @@
 {% extends "devices/hi6220-hikey" %}
 
 {% set MODULES_URL_COMP = MODULES_URL_COMP|default("xz") %}
+
+{% set rootfs_label = 'rootfs' %}
