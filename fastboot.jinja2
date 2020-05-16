@@ -74,6 +74,34 @@ protocols:
 {% endblock lxc %}
 
 {% block deploy_target %}
+{% if rootfs_label == "nfsrootfs" %}
+- deploy:
+    timeout:
+      minutes: {{ target_deploy_timeout }}
+    to: nfs
+    namespace: target
+    nfsrootfs:
+        url: {{ROOTFS_URL}}
+{% if ROOTFS_URL_FORMAT is defined %}
+        format: {{ROOTFS_URL_FORMAT}}
+{% endif %}
+{% if ROOTFS_URL_COMP is defined %}
+        compression: {{ROOTFS_URL_COMP}}
+{% endif %}
+{% if apply_overlay == "rootfs" %}
+        apply-overlay: true
+{% endif %}
+{% if MODULES_URL is defined %}
+    modules:
+      url: {{MODULES_URL}}
+{% if MODULES_URL_FORMAT is defined %}
+      format: {{MODULES_URL_FORMAT}}
+{% endif %}
+{% if MODULES_URL_COMP is defined %}
+      compression: {{MODULES_URL_COMP}}
+{% endif %}
+{% endif %}
+{% endif %}
 - deploy:
     timeout:
       minutes: {{ target_deploy_timeout }}
@@ -118,6 +146,7 @@ protocols:
       dtb:
         url: {{DTB_URL}}
 {% endif %}
+{% if rootfs_label != 'nfsrootfs' %}
 {% if MODULES_URL is defined %}
       modules:
         url: {{MODULES_URL}}
@@ -152,6 +181,7 @@ protocols:
 {% endif %}
 {% if OVERLAY_MODULES_URL_COMP is defined %}
             compression: {{OVERLAY_MODULES_URL_COMP}}
+{% endif %}
 {% endif %}
 {% endif %}
 {% endif %}

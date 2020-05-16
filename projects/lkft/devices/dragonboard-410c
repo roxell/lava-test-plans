@@ -1,3 +1,5 @@
 {% extends "devices/dragonboard-410c" %}
 
+{% set BOOT_LABEL = 'kernel' %}
 {% set MODULES_URL_COMP = MODULES_URL_COMP|default("xz") %}
+{% set rootfs_label = 'nfsrootfs' %}
