@@ -18,6 +18,9 @@
 {% if guestfs_virtio is defined and guestfs_virtio == true %}
   guestfs_interface: virtio
 {% endif %}
+{% if boot_docker is defined and boot_docker == true %}
+  netdevice: user
+{% endif %}
 {% endblock global_settings %}
 
 {% block actions %}
@@ -131,6 +134,7 @@
 {% endif %}
 {% block boot_commands %}
 {% endblock boot_commands %}
+{% include "include/boot_target/boot_docker.jinja2" %}
 {% endblock boot_target %}
 
 {{ super() }}

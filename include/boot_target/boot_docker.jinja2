@@ -1,0 +1,7 @@
+{% if boot_docker is defined and boot_docker == true %}
+    docker:
+      image: {{ BOOT_DOCKER_IMAGE }}
+{% if BOOT_DOCKER_BINARY is defined %}
+      binary: {{ BOOT_DOCKER_BINARY }}
+{% endif %}
+{% endif %}
