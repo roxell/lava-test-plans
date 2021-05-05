@@ -1,0 +1,5 @@
+{% extends "testcases/master/template-mmtests.yaml.jinja2" %}
+
+{% set testname = 'sysbenchcpu' %}
+{% set configfile = 'configs/config-scheduler-sysbench-cpu' %}
+{% set test_timeout = 45 %}
